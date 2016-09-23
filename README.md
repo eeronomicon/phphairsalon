@@ -98,10 +98,11 @@ Project Requirements: Create an application for a hair salon. The owner should b
 * USE hair_salon;
 * CREATE TABLE stylists (id serial PRIMARY KEY, name varchar (255));
 * CREATE TABLE clients (id serial PRIMARY KEY, name varchar (255), stylist_id int);
+* Make a copy of hair_salon as hair_salon_test (Structure Only).
 
 ### Application Setup
 
-* Unzip and import database into mySQL.
+* Unzip and import production and test databases into mySQL.
 * Adjust mySQL port as appropriate based on your local server's settings.
 * Start the PHP server in the application's /web directory.
 * Open a web browser to the server's root.
@@ -116,7 +117,7 @@ Contact me via GitHub!
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+HTML5, CSS, JavaScript, Bootstrap, jQuery, PHP, Silex, Twig, and mySQL.
 
 ### License
 
