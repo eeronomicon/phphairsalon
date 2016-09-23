@@ -90,6 +90,10 @@ Project Requirements: Create an application for a hair salon. The owner should b
   * Input: Stylist "Joe McCook" has the following Clients - "James Mittoo", "Florian Schroeder"; Stylist "Michelle Ramone" has the following Clients - "Donald Hagen", "Elodie Watson"; Delete all Joe McCook's Clients
   * Output: Only "Donald Hagen", "Elodie Watson" remain in the list of Clients
 
+* Can delete all Clients when all Stylists are deleted
+  * Input: Stylist "Joe McCook" has the following Clients - "James Mittoo", "Florian Schroeder"; Stylist "Michelle Ramone" has the following Clients - "Donald Hagen", "Elodie Watson"; Delete all Stylists
+  * Output: No Clients or Stylists are returned from the database
+
 ## Setup/Installation Requirements
 
 ### Database Setup
