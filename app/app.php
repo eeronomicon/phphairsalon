@@ -28,6 +28,11 @@
         return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
     });
 
+    $app->post('/stylists/delete_all', function() use ($app) {
+        Stylist::deleteAll();
+        return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
+    });
+
     $app->get('/stylists/{id}', function($id) use ($app) {
         return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
     });

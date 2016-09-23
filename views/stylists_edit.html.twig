@@ -25,10 +25,11 @@
                 <button type="submit" class="btn btn-success">Update Stylist</button>
                 <a class="btn btn-warning" href="/">Cancel</a>
             </form>
-            <h2>Remove {{ stylist.getName }}!</h2>
+            <h2>Remove {{ stylist.getName }}?</h2>
             <form action="/stylists/{{ stylist.getId }}" method="post">
                 <input name="_method" type="hidden" value="delete">
                 <button type="submit" class="btn btn-danger">Nuke 'Em From Orbit!</button>
+                <a class="btn btn-warning" href="/">Cancel</a>
             </form>
         </div>
     </body>
