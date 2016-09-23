@@ -26,7 +26,7 @@
                 <h4>Whoops, we have no clients! Quick, enter some now!</h4>
             {% endif %}
             <h2>Add a Client to the Roster:</h2>
-            <form action="/clients" method="post">
+            <form action="/clients/add" method="post">
                 <div class="form-group">
                     <label for="client_name">Name of Client</label>
                     <input class="form-control" type="text" name="client_name" required autofocus>
@@ -35,7 +35,7 @@
                 <button type="button" class="btn btn-warning btn-clear-fields">Clear Name</button>
             </form>
             <h2>Remove All Clients</h2>
-            <form action="/stylists/delete_all" method="post">
+            <form action="/clients/delete_all" method="post">
                 <button type="submit" class="btn btn-danger">Start from Scratch!</button>
             </form>
         </div>

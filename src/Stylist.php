@@ -81,6 +81,18 @@
             return $clients;
         }
 
+        function deleteClients()
+        {
+            $returned_clients = $GLOBALS['DB']->query("SELECT * FROM clients WHERE stylist_id = {$this->getId()};");
+            foreach($returned_clients as $client) {
+                $id = $client['id'];
+                $name = $client['name'];
+                $stylist_id = $client['stylist_id'];
+                $new_client = new Client($name, $stylist_id, $id);
+                $new_client->delete();
+            }
+        }
+
         function update($new_name)
         {
             $GLOBALS['DB']->exec("UPDATE stylists SET name = '{$new_name}' WHERE id = {$this->getId()};");
@@ -90,6 +102,7 @@
         function delete()
         {
             $GLOBALS['DB']->exec("DELETE FROM stylists WHERE id = {$this->getId()};");
+            $GLOBALS['DB']->exec("DELETE FROM clients WHERE stylist_id = {$this->getId()};");
         }
 
     }
