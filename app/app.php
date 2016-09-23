@@ -92,5 +92,10 @@
         return $app['twig']->render('clients.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
     });
 
+    $app->post('/clients/delete_all', function() use ($app) {
+        Client::deleteAll();
+        return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
+    });
+
     return $app;
 ?>
