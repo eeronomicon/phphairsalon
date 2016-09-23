@@ -17,15 +17,127 @@
         protected function tearDown()
         {
             Stylist::deleteAll();
-            Client::deleteAll();
+            // Client::deleteAll();
         }
+
         function test_getName()
         {
+            // Arrange
             $name = "Joe McCool";
             $id = null;
             $test_stylist = new Stylist($name, $id);
+
+            // Act
             $result = $test_stylist->getName();
+
+            // Assert
             $this->assertEquals($name, $result);
         }
+
+        function test_getId()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist = new Stylist($name, $id);
+            $test_stylist->save();
+
+            // Act
+            $result = $test_stylist->getId();
+
+            // Assert
+            $this->assertEquals($test_stylist->getId(), $result);
+        }
+
+        function test_setName()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist = new Stylist($name, $id);
+            $test_stylist->save();
+            $new_name = "Joseph McCool";
+
+            // Act
+            $test_stylist->setName($new_name);
+            $result = $test_stylist->getName();
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
+
+        function test_getAll()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            $name = "Toni Thyme";
+            $test_stylist2 = new Stylist($name, $id);
+            $test_stylist2->save();
+
+            // Act
+            $result = Stylist::getAll();
+
+            // Assert
+            $this->assertEquals([$test_stylist1, $test_stylist2], $result);
+
+        }
+
+        function test_save()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            // Act
+            $result = Stylist::getAll();
+
+            // Assert
+            $this->assertEquals([$test_stylist1], $result);
+        }
+
+        function test_deleteAll()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            $name = "Toni Thyme";
+            $test_stylist2 = new Stylist($name, $id);
+            $test_stylist2->save();
+
+            // Act
+            Stylist::deleteAll();
+
+            // Assert
+            $this->assertEquals([], Stylist::getAll());
+        }
+
+        function test_find()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            $name = "Toni Thyme";
+            $test_stylist2 = new Stylist($name, $id);
+            $test_stylist2->save();
+
+            // Act
+            $result = Stylist::find($test_stylist1->getId());
+
+            // Assert
+            $this->assertEquals($test_stylist1, $result);
+        }
+
     }
 ?>

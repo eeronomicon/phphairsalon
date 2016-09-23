@@ -22,6 +22,10 @@ Project Requirements: Create an application for a hair salon. The owner should b
   * Input: Stylist named "Joe McCool"
   * Output: create and retrieve "Joe McCool" from database
 
+* Can replace Stylist name with new name
+  * Input: new name for "Joe McCool" - "Joseph McCool"
+  * Output: updated name - "Joseph McCool"
+
 * Able to retrieve all Stylists
   * Input: database with the Stylists "Joe McCool", "Lana Smith", "Roland Curley"
   * Output: retrieved the list "Joe McCool", "Lana Smith", "Roland Curley"
