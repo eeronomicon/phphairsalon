@@ -52,6 +52,7 @@
         static function deleteAll()
         {
             $GLOBALS['DB']->exec("DELETE FROM stylists;");
+            $GLOBALS['DB']->exec("DELETE FROM clients;");
         }
 
         static function find($search_id)
