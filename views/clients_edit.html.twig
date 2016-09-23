@@ -13,20 +13,20 @@
         <div class="container">
             <div class="jumbotron">
                 <h1><a href="/">Livin' Off My Hair (Salon)</a></h1>
-                <h4>Proprietor and Head Stylist: Bon Joe Beehive!</h4>
+                <h4>Proprietor and Head Client: Bon Joe Beehive!</h4>
             </div>
-            <h2>Update {{ stylist.getName }}'s Info</h2>
-            <form action="/stylists/{{ stylist.getId }}" method="post">
+            <h2>Update {{ client.getName }}'s Info</h2>
+            <form action="/clients/{{ client.getId }}" method="post">
                 <input name="_method" type="hidden" value="patch">
                 <div class="form-group">
-                    <label for="new_stylist_name">Name of Stylist</label>
-                    <input class="form-control" type="text" name="new_stylist_name" required autofocus placeholder="{{ stylist.getName }}">
+                    <label for="new_client_name">Name of Client</label>
+                    <input class="form-control" type="text" name="new_client_name" required autofocus placeholder="{{ client.getName }}">
                 </div>
-                <button type="submit" class="btn btn-success">Update Stylist</button>
+                <button type="submit" class="btn btn-success">Update Client</button>
                 <a class="btn btn-warning" href="/">Cancel</a>
             </form>
-            <h2>Remove {{ stylist.getName }}?</h2>
-            <form action="/stylists/{{ stylist.getId }}" method="post">
+            <h2>Remove {{ client.getName }}?</h2>
+            <form action="/clients/{{ client.getId }}/delete" method="post">
                 <input name="_method" type="hidden" value="delete">
                 <button type="submit" class="btn btn-danger">Nuke 'Em From Orbit!</button>
                 <a class="btn btn-warning" href="/">Cancel</a>

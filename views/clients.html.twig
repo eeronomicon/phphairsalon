@@ -19,14 +19,14 @@
             {% if clients is not empty %}
                 <ul class="list-group">
                     {% for client in clients %}
-                        <li class="list-group-item">{{ client.getName }} (<a href="/clients/{{ client.getId }}">View Details</a> | <a href="/clients/{{ client.getId }}/edit">Edit Stylist</a>)</li>
+                        <li class="list-group-item">{{ client.getName }} (<a href="/clients/{{ client.getId }}/edit">Edit Client</a>)</li>
                     {% endfor %}
                 </ul>
             {% else %}
                 <h4>Whoops, we have no clients! Quick, enter some now!</h4>
             {% endif %}
             <h2>Add a Client to the Roster:</h2>
-            <form action="/clients/add" method="post">
+            <form action="/clients/{{ stylist.getId }}/add" method="post">
                 <div class="form-group">
                     <label for="client_name">Name of Client</label>
                     <input class="form-control" type="text" name="client_name" required autofocus>
@@ -34,10 +34,12 @@
                 <button type="submit" class="btn btn-success">Add Client</button>
                 <button type="button" class="btn btn-warning btn-clear-fields">Clear Name</button>
             </form>
-            <h2>Remove All Clients</h2>
-            <form action="/clients/delete_all" method="post">
+            <h2>Remove All of {{ stylist.getName }}'s Clients</h2>
+            <form action="/clients/{{ stylist.getId }}/delete_all" method="post">
                 <button type="submit" class="btn btn-danger">Start from Scratch!</button>
             </form>
+            <hr>
+            <p><a href="/">Back to the Stylists List</a></p>
         </div>
     </body>
 </html>
