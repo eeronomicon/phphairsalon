@@ -120,6 +120,35 @@
             $this->assertEquals([], Stylist::getAll());
         }
 
+        function test_deleteAll2()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            $name = "Toni Thyme";
+            $test_stylist2 = new Stylist($name, $id);
+            $test_stylist2->save();
+
+            $client_name1 = "Jamie Mittoo";
+            $client_name2 = "Tammy McCook";
+
+            $test_client1 = new Client($client_name1, $test_stylist1->getId(), $id);
+            $test_client1->save();
+
+            $test_client2 = new Client($client_name2, $test_stylist2->getId(), $id);
+            $test_client2->save();
+
+            // Act
+            Stylist::deleteAll();
+            $result = [Stylist::getAll(), Client::getAll()];
+
+            // Assert
+            $this->assertEquals(array([], []), $result);
+        }
+
         function test_find()
         {
             // Arrange
