@@ -82,6 +82,10 @@ Project Requirements: Create an application for a hair salon. The owner should b
   * Input: remove "Jamie Mittoo" from database containing "Joe McCool", "Lana Smith", "Roland Curley"
   * Output: only "Lana Smith" and "Roland Curley" remain in database
 
+* Can retrieve all Clients of a specific Stylist
+  * Input: Stylist "Joe McCook" has the following Clients - "James Mittoo", "Florian Schroeder"
+  * Output: Returns "James Mittoo" and "Florian Schroeder"
+
 ## Setup/Installation Requirements
 
 ### Database Setup

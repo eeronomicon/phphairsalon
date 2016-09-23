@@ -19,7 +19,7 @@
             {% if stylists is not empty %}
                 <ul class="list-group">
                     {% for stylist in stylists %}
-                        <li class="list-group-item">{{ stylist.getName }} (<a href="/stylists/{{ stylist.getId }}">View Details</a> | <a href="/stylists/{{ stylist.getId }}/edit">Edit Stylist</a>)</li>
+                        <li class="list-group-item">{{ stylist.getName }} (<a href="/stylists/{{ stylist.getId }}">View Clients</a> | <a href="/stylists/{{ stylist.getId }}/edit">Edit Stylist</a>)</li>
                     {% endfor %}
                 </ul>
             {% else %}

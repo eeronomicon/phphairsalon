@@ -34,7 +34,8 @@
     });
 
     $app->get('/stylists/{id}', function($id) use ($app) {
-        return $app['twig']->render('stylists.html.twig', array('stylists' => Stylist::getAll()));
+        $found_stylist = Stylist::find($id);
+        return $app['twig']->render('clients.html.twig', array('stylist' => $found_stylist, 'clients' => Client::getAll()));
     });
 
     $app->get('/stylists/{id}/edit', function($id) use ($app) {
