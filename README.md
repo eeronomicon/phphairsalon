@@ -38,7 +38,13 @@ Project Requirements: Create an application for a hair salon. The owner should b
   * Input: database record for Stylist named "Joe McCool", ID Number of 1, finding Stylist with ID Number of 1
   * Output: "Joe McCool"'s database record
 
+* Can update Stylist record with new name
+  * Input: new name for "Joe McCool" saved in database - "Joseph McCool"
+  * Output: retrieved "Joseph McCool" from database
 
+* Can remove Stylist record from database
+  * Input: remove "Joe McCool" from database containing "Joe McCool", "Lana Smith", "Roland Curley"
+  * Output: only "Lana Smith" and "Roland Curley" remain in database
 
 ## Setup/Installation Requirements
 

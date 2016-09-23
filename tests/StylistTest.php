@@ -139,5 +139,47 @@
             $this->assertEquals($test_stylist1, $result);
         }
 
+        function test_update()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            $new_name = "Joseph McCool";
+
+            // Act
+            $test_stylist1->update($new_name);
+            $result = Stylist::find($test_stylist1->getId())->getName();
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
+
+        function test_delete()
+        {
+            // Arrange
+            $name = "Joe McCool";
+            $id = null;
+            $test_stylist1 = new Stylist($name, $id);
+            $test_stylist1->save();
+
+            $name = "Toni Thyme";
+            $test_stylist2 = new Stylist($name, $id);
+            $test_stylist2->save();
+
+            $name = "Jane Morrison";
+            $test_stylist3 = new Stylist($name, $id);
+            $test_stylist3->save();
+
+            // Act
+            $test_stylist1->delete();
+            $result = Stylist::getAll();
+
+            // Assert
+            $this->assertEquals([$test_stylist2, $test_stylist3], $result);
+        }
+
     }
 ?>
