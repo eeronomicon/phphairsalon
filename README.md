@@ -10,6 +10,31 @@ Project Requirements: Create an application for a hair salon. The owner should b
 
 ## Specifications
 
+* Able to retrieve Stylist name
+  * Input: database record for Stylist named "Joe McCool"
+  * Output: "Joe McCool"
+
+* Able to retrieve Stylist ID Number
+  * Input: database record for Stylist named "Joe McCool", ID Number of 1
+  * Output: 1
+
+* Can record Stylist information into database
+  * Input: Stylist named "Joe McCool"
+  * Output: create and retrieve "Joe McCool" from database
+
+* Able to retrieve all Stylists
+  * Input: database with the Stylists "Joe McCool", "Lana Smith", "Roland Curley"
+  * Output: retrieved the list "Joe McCool", "Lana Smith", "Roland Curley"
+
+* Can remove all Stylists from database
+  * Input: database with the Stylists "Joe McCool", "Lana Smith", "Roland Curley"
+  * Output: retrieved an empty list
+
+* Can find Stylist based on ID Number
+  * Input: database record for Stylist named "Joe McCool", ID Number of 1, finding Stylist with ID Number of 1
+  * Output: "Joe McCool"'s database record
+
+
 
 ## Setup/Installation Requirements
 

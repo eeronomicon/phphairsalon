@@ -21,7 +21,7 @@
         }
         function test_getName()
         {
-            $name = "Thai";
+            $name = "Joe McCool";
             $id = null;
             $test_stylist = new Stylist($name, $id);
             $result = $test_stylist->getName();
